@@ -1,0 +1,21 @@
+	<persistence-unit name="nameOfEntityManagerFactory" transaction-type="RESOURCE_LOCAL">
+	 <provider>org.hibernate.ejb.HibernatePersistence</provider>
+	 
+	<!-- Each class below will create a table into the selected database -->
+
+	 <class>path.to.your.class.ClassName1</class>
+	 <class>path.to.your.class.ClassName2</class>
+	 
+	 <properties>
+		 <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- PostgreSQL driver -->
+		 <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:PortNumber/name-of-your-db" ></property> <!-- default PortNumber: 5432 -->
+		 <property name="javax.persistence.jdbc.user" value="your-user" /> <!-- default user: postgres -->
+		 <property name="javax.persistence.jdbc.password" value="postgres" /> <!-- default password: postgres -->
+		 <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+		 <property name="hibernate.connection.shutdown" value="true" />
+		 <property name="hibernate.hbm2ddl.auto" value="update" />
+		 <property name="hibernate.show_sql" value="false" />
+		 <property name="hibernate.format_sql" value="false"/>
+	 </properties>
+	 
+	 </persistence-unit>
